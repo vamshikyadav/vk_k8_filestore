@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: filestore-test
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    command: ["/bin/bash", "-c", "sleep 3600"]
+    volumeMounts:
+    - name: filestore-volume
+      mountPath: /data
+  volumes:
+  - name: filestore-volume
+    persistentVolumeClaim:
+      claimName: filestore-pvc

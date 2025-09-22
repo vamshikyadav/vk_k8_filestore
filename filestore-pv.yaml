@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: filestore-pv
+spec:
+  capacity:
+    storage: 1Ti   # logical size, doesn't resize Filestore
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /<SHARE_NAME>   # Example: /vol1
+    server: <FILESTORE_IP>  # Example: 10.10.0.2
