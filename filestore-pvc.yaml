@@ -7,4 +7,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi   # just a request, backed by Filestore’s capacity
+      storage: 10Gi
+  volumeName: filestore-pv   # explicitly bind to PV

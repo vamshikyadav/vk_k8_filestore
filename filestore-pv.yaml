@@ -4,10 +4,10 @@ metadata:
   name: filestore-pv
 spec:
   capacity:
-    storage: 1Ti   # logical size, doesn't resize Filestore
+    storage: 1Ti
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    path: /<SHARE_NAME>   # Example: /vol1
-    server: <FILESTORE_IP>  # Example: 10.10.0.2
+    path: /vol1        # your Filestore share_name
+    server: 10.10.0.2  # your Filestore IP
